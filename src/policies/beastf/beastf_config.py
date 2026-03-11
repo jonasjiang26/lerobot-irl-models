@@ -45,7 +45,7 @@ class BeastVLAConfig(SmolVLAConfig):
         # VLM configuration
         self.vlm_path: str = "microsoft/Florence-2-base"
         self.freeze_florence: bool = False
-        self.freeze_vision_tower: bool = False
+        self.freeze_vision_tower: bool = True
         self.freeze_embeddings_only: bool = False
         self.vlm_prompt_style: str = "default"
         self.token_dropout: float = 0.1

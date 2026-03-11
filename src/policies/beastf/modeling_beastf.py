@@ -286,6 +286,9 @@ class BeastFModel(nn.Module):
             lm_logits.view(-1, self.vlm.config.vocab_size),
             llm_label_ids.view(-1),
         )
+        print("loss.requires_grad:", masked_lm_loss.requires_grad)
+        print("loss.grad_fn:", masked_lm_loss.grad_fn)
+        print("num trainable:", sum(p.numel() for p in self.parameters() if p.requires_grad))
 
         # 7. Metrics (Optional)
         with torch.no_grad():

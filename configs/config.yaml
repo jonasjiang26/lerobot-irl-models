@@ -1,12 +1,12 @@
 repo_id: beastf
-dataset_path: /home/jing/zihao_zhang/banana_beso/banana_beso_train
-task: "pick_and_lift"
-checkpoint_path: /home/jing/lerobot-irl-models/src/outputs
+dataset_path: $TMPDIR/banana_beso_all
+task: "put the banana in the bowl"
+checkpoint_path: /hkfs/work/workspace/scratch/unisc-beso/output
 
 train:
   batch_size: 1 #64
-  steps: 2 #40000
-  save_freq: 1
+  steps: 3000 #40000
+  save_freq: 1000
   seed: 42
   device: cuda
   num_workers: 0
@@ -19,7 +19,7 @@ train:
   compile_model: false
 
 wandb:
-  enable: false
-  project: "lerobot-training"
-  entity: ""
-  mode: "disabled"  # "online", "offline", "disabled"
+  enable: True
+  project: "beastf-smoke-training"
+  entity: "jonasjiang26-karlsruhe-institute-of-technology"
+  mode: "online"  # "online", "offline", "disabled"
